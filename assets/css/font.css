@@ -3,3 +3,8 @@
     letter-spacing: 3px;
     color: var(--primary);
 }
+
+.font-warning {
+    color: var(--red);
+    letter-spacing: 2px;
+}
