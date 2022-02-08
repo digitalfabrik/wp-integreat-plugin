@@ -25,7 +25,7 @@ function integreat_register_settings() {
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
     add_settings_field( 'integreat_plugin_options_city', 'City', 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_search_term', 'Search Term', 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_design', 'Search Term', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
 }
 add_action( 'admin_init', 'integreat_register_settings' );
 
@@ -70,4 +70,14 @@ function integreat_plugin_design() {
             <option <?php if ($options['design'] == 'integreat_plugin_design_small') {?> selected="selected" <?php } ?> value="integreat_plugin_design_small">Kleiner Ein-Spalter</option>
         </select>
     <?php
+    if ($options['design'] == 'integreat_plugin_design_big') { ?>
+        <p><b>Please Note:</b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
+        <label>Please insert the url of the image here</label>
+        <br>
+        <input name="integreat_plugin_design_big_image">
+    <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') {
+
+    } else if ($options['design'] == 'integreat_plugin_design_small') {
+
+    }
 }
