@@ -1,0 +1,15 @@
+.integreat_submit {
+    max-height: 62px;
+    font-weight: bolder;
+    color: var(--black) !important;
+    text-transform: uppercase !important;
+    border: 5px solid var(--primary) !important;
+    background-color: var(--primary) !important;
+    font-family: "Raleway", "Arial", "sans-serif" !important;
+}
+
+.integreat_submit:hover {
+    color: var(--black) !important;
+    border: 5px solid var(--primary) !important;
+    background-color: var(--white) !important;
+}

@@ -1,0 +1,5 @@
+.font-highlighting {
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--primary);
+}

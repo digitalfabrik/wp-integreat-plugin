@@ -1,0 +1,11 @@
+@media only screen and (min-width: 768px) {
+    #integreat_plugin_big {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .integreat_plugin_big .integreat_plugin_column_1_3 {
+        display: flex;
+        align-items: center;
+    }
+}

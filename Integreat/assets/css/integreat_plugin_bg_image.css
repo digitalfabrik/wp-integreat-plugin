@@ -1,0 +1,9 @@
+#integreat_plugin_bg_image {
+    padding: 50px 15px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white) !important;
+    background-image: url('../images/integreat_plugin_image.jpg'); /*images/integreat_plugin_image.jpg*/
+}

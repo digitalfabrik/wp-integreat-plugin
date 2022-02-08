@@ -1,0 +1,27 @@
+/* form */
+.integreat_plugin_search_bar {   
+    position: relative;
+}
+
+.integreat_plugin label {
+    display: block;
+} 
+
+.integreat_plugin_search {
+    border: 0 !important;
+    padding: 15px;
+    height: 62px !important;
+    width: 250px !important;
+    border-radius: 50px 50px !important;
+}
+
+.integreat_plugin_submit {
+    top: 0;
+    left: 175px;
+    height: 62px;
+    position: absolute;
+    line-height: 0 !important;
+    color: var(--black) !important;
+    border-radius: 50px 50px !important;
+    background-color: var(--primary) !important;
+}
