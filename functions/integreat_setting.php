@@ -23,6 +23,7 @@ function integreat_render_plugin_settings_page() {
 function integreat_register_settings() {
     register_setting( 'integreat_plugin_options', 'integreat_plugin_options', 'integreat_plugin_options_validate' );
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
+    add_settings_field( 'integreat_plugin_options_language', 'Degree of formality', 'integreat_plugin_options_language', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_options_city', 'City', 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_search_term', 'Search Term', 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
@@ -48,6 +49,10 @@ function integreat_plugin_options_validate( $input ) {
 function integreat_plugin_section_text() {
     echo '<p>Here you can change the settings for using the Integreat App Plugin.</p>';
     echo '<p>Add the Integreat search widget by inserting this shortcode <span class="font-highlighting font-warning">[integreat]</span>.</p>';  
+}
+
+function integreat_plugin_options_language() {
+    echo "<span>Informal</span><input type='range' min=1 max=2><span>Formal</span>";
 }
 
 function integreat_plugin_options_city() {
