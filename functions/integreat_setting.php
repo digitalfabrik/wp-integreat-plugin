@@ -31,9 +31,13 @@ function integreat_register_settings() {
 add_action( 'admin_init', 'integreat_register_settings' );
 
 function integreat_plugin_options_validate( $input ) {
+    $newinput['language'] = trim( $input['language'] );
     $newinput['city'] = trim( $input['city'] );
     $newinput['term'] = trim( $input['term'] );
     $newinput['design'] = trim( $input['design'] );
+    if (! preg_match( '/^[a-z0-9]{32}$/i', $newinput['language'] ) && $_POST['integreat_plugin_options_language'] != null) {
+        $newinput['language'] = $_POST['integreat_plugin_options_language'];
+    }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['city'] ) && $_POST['integreat_plugin_options_city'] != null ) {
         $newinput['city'] = $_POST['integreat_plugin_options_city'];
     }
@@ -52,7 +56,12 @@ function integreat_plugin_section_text() {
 }
 
 function integreat_plugin_options_language() {
-    echo "<span>Informal</span><input type='range' min=1 max=2><span>Formal</span>";
+    $options = get_option( 'integreat_plugin_options' );
+    if ($options['language'] == 'on') {
+        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>Use second form singular";   
+    } else {
+        echo "<input name='integreat_plugin_options_language' type='checkbox'>Use second form singular";
+    }
 }
 
 function integreat_plugin_options_city() {
