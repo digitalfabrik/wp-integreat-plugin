@@ -24,7 +24,7 @@ function integreat_render_design_big($options) {
                     z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
                     Lehrstellenbörse und vieles mehr.
                 </p>
-                <label class="mb-md"><b>Wonach suchst du in deiner Stadt?</b></label>
+                <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
                 <div class="integreat_plugin_search_bar">
                     <form action="https://integreat.app/<?= strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                         <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder=<?php (esc_attr( $options['term'] ) ? esc_attr( $options['term'] ) : 'Integrationskurse') ?>>
@@ -44,7 +44,7 @@ function integreat_render_design_bg_image($options) {
                 z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
                 Lehrstellenbörse und vieles mehr.
             </p>
-            <label class="mb-md"><b>Wonach suchst du in deiner Stadt?</b></label>
+            <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
             <div class="integreat_plugin_search_bar">
                 <form action="https://integreat.app/<?= strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                     <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder="<?= $options['term'] ?>">
@@ -64,7 +64,7 @@ function integreat_render_design_small($options) {
             z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
             Lehrstellenbörse und vieles mehr.
         </p>
-        <label class="mb-md"><b>Wonach suchst du in deiner Stadt?</b></label>
+        <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?= strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder="<?= $options['term'] ?>">
