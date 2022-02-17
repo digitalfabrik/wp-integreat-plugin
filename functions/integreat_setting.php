@@ -79,9 +79,10 @@ function integreat_plugin_design() {
     $options = get_option( 'integreat_plugin_options' );
     ?>    
         <select id='integreat_plugin_design' name='integreat_plugin_design'>
+            <option <?php if ($options['design'] == 'integreat_render_design_search_widget') {?> selected="selected" <?php } ?> value="integreat_render_design_search_widget">Kleines Such-Widget</option>
+            <option <?php if ($options['design'] == 'integreat_plugin_design_small') {?> selected="selected" <?php } ?> value="integreat_plugin_design_small">Kleiner Ein-Spalter</option>
             <option <?php if ($options['design'] == 'integreat_plugin_design_big') {?> selected="selected" <?php } ?> value="integreat_plugin_design_big">Vollflächiger Zwei-Spalter</option>
             <option <?php if ($options['design'] == 'integreat_plugin_design_bg_image') {?> selected="selected" <?php } ?> value="integreat_plugin_design_bg_image">Vollflächiger Ein-Spalter</option>
-            <option <?php if ($options['design'] == 'integreat_plugin_design_small') {?> selected="selected" <?php } ?> value="integreat_plugin_design_small">Kleiner Ein-Spalter</option>
         </select>
     <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>

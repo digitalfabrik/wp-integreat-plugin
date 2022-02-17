@@ -7,8 +7,10 @@ function integreat_shortcode_render_snippet() {
         integreat_render_design_bg_image($options);
     } else if ($options['design'] == 'integreat_plugin_design_small') {
         integreat_render_design_small($options);
-    } else {
+    } else if ($options['design'] == 'integreat_plugin_design_big') {
         integreat_render_design_big($options);
+    } else {
+        integreat_render_design_search_widget($options);
     }
 }
 
@@ -65,6 +67,21 @@ function integreat_render_design_small($options) {
             Lehrstellenbörse und vieles mehr.
         </p>
         <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
+        <div class="integreat_plugin_search_bar">
+            <form action="https://integreat.app/<?= strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
+                <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder="<?= $options['term'] ?>">
+                <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" value="<?php esc_attr_e( 'Search' ); ?>">
+            </form>
+        </div>
+    </div>
+    <?php
+}
+
+function integreat_render_design_search_widget($options) {
+    ?>
+    <div id="integreat_plugin_search_widget" class="integreat_plugin_search_widget">
+        <img class="mb-md" src="https://integreat.app/app-logo.png">    
+        <label class="mb-sm"><b>Mehrsprachige Informationen finden</b></label>
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?= strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder="<?= $options['term'] ?>">
