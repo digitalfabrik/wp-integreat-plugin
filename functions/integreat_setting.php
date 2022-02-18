@@ -47,6 +47,9 @@ function integreat_plugin_options_validate( $input ) {
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['design'] ) && $_POST['integreat_plugin_design'] != null) {
         $newinput['design'] = $_POST['integreat_plugin_design'];
     }
+    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['design'] ) && $_POST['integreat_plugin_design_big_image'] != null) {
+        $newinput['image_big'] = $_POST['integreat_plugin_design'];
+    }
     return $newinput;
 }
 
@@ -89,7 +92,7 @@ function integreat_plugin_design() {
         <p><b>Please Note:</b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
         <label>Please insert the url of the image here</label>
         <br>
-        <input name="integreat_plugin_design_big_image">
+        <input value="<?php /* $options['image_big'] */ ?>" name="integreat_plugin_design_big_image">
     <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') {
 
     } else if ($options['design'] == 'integreat_plugin_design_small') {
