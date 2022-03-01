@@ -65,22 +65,22 @@ function integreat_plugin_options_validate( $input ) {
 
 function integreat_plugin_section_text() {
     echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-translation') . '</p>';
-    echo '<p>Add the Integreat search widget by inserting this shortcode <span class="font-highlighting font-warning">[integreat]</span>.</p>';  
+    echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-translation') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
 }
 
 function integreat_plugin_options_language() {
     $options = get_option( 'integreat_plugin_options' );
     if ($options['language'] == 'on') {
-        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>Use second form singular";   
+        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-translation');
     } else {
-        echo "<input name='integreat_plugin_options_language' type='checkbox'>Use second form singular";
+        echo "<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-translation');
     }
 }
 
 function integreat_plugin_options_city() {
     $options = get_option( 'integreat_plugin_options' );
     echo "<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />";
-    echo "<p><b>Please note:</b> Add the city name as it is in the url slug of <a href='https://www.integreat.app/'> Integreat</a>. For example add LkAugsburg instead of Landkreis Augsburg.</p>";
+    echo "<p><b>" . __("Please note:", "integreat-translation") . "</b> " . __("Add the city name as it is in the url slug of", "integreat-translation") . " <a href='https://www.integreat.app/'> Integreat</a>. " . __("For example add LkAugsburg instead of Landkreis Augsburg.", "integreat-translation") . "</p>";
 }
 
 function integreat_plugin_search_term() {
@@ -99,19 +99,22 @@ function integreat_plugin_design() {
         </select>
     <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>
-        <p><b><?php echo __('Please Note:', 'integreat-translation'); ?></b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
-        <label>Please insert the url of the image here</label>
+        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
         <input value="<?php if(isset($options['image_big'])) { echo $options['image_big']; } ?>" name="integreat_plugin_design_big_image">
     <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') { ?>
-        <p><b>Please Note:</b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
-        <label>Please insert the url of the image here</label>
+        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
         <input value="<?php if(isset($options['image_bg'])) { echo $options['image_bg']; } ?>" name="integreat_plugin_design_bg_image">
     <?php
     } else if ($options['design'] == 'integreat_plugin_design_small') {?>
-        <p><b>Please Note:</b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
-        <label>Please insert the url of the image here</label>
+        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
         <input value="<?php if(isset($options['image_small'])) { echo $options['image_small']; } ?>" name="integreat_plugin_design_small_image">
     <?php
