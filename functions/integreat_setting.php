@@ -64,7 +64,7 @@ function integreat_plugin_options_validate( $input ) {
 }
 
 function integreat_plugin_section_text() {
-    echo '<p>Here you can change the settings for using the Integreat App Plugin.</p>';
+    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.') . '</p>';
     echo '<p>Add the Integreat search widget by inserting this shortcode <span class="font-highlighting font-warning">[integreat]</span>.</p>';  
 }
 
