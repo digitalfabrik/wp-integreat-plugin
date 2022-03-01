@@ -23,9 +23,9 @@ function integreat_render_plugin_settings_page() {
 function integreat_register_settings() {
     register_setting( 'integreat_plugin_options', 'integreat_plugin_options', 'integreat_plugin_options_validate' );
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
-    add_settings_field( 'integreat_plugin_options_language', 'Degree of formality', 'integreat_plugin_options_language', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_options_city', 'City', 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_search_term', 'Search Term', 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_options_language', __('Degree of formality', 'integreat-translation'), 'integreat_plugin_options_language', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_options_city', __('City', 'integreat-translation'), 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_search_term', __('Search Term', 'integreat-translation'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
 }
 add_action( 'admin_init', 'integreat_register_settings' );
@@ -64,7 +64,7 @@ function integreat_plugin_options_validate( $input ) {
 }
 
 function integreat_plugin_section_text() {
-    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.') . '</p>';
+    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-translation') . '</p>';
     echo '<p>Add the Integreat search widget by inserting this shortcode <span class="font-highlighting font-warning">[integreat]</span>.</p>';  
 }
 
@@ -99,7 +99,7 @@ function integreat_plugin_design() {
         </select>
     <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>
-        <p><b>Please Note:</b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
+        <p><b><?php echo __('Please Note:', 'integreat-translation'); ?></b> If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.</p>
         <label>Please insert the url of the image here</label>
         <br>
         <input value="<?php if(isset($options['image_big'])) { echo $options['image_big']; } ?>" name="integreat_plugin_design_big_image">

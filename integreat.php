@@ -14,7 +14,7 @@ wp_register_style( 'namespace', plugin_dir_url(__FILE__) . 'assets/styles.css' )
 wp_enqueue_style('namespace');
 
 add_action( 'plugins_loaded', function() {
-    load_plugin_textdomain( 'integreat-translation', false, basename(dirname(__FILE__) . 'languages'));
+    load_plugin_textdomain( 'integreat-translation', false, basename(dirname(__FILE__) . '\languages'));
 });
 
 // function ig_ac_generate_selection_box() {
