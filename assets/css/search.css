@@ -13,12 +13,14 @@
     height: 62px !important;
     width: 250px !important;
     border-radius: 25px 25px !important;
+    border: 2px solid black !important;
 }
 
 .integreat_plugin_submit {
     top: 0;
     left: 175px;
     height: 62px;
+    min-width: 125px;
     position: absolute;
     line-height: 0 !important;
     color: var(--black) !important;
