@@ -22,6 +22,7 @@
     height: 62px;
     min-width: 125px;
     position: absolute;
+    border: 0 !important;
     line-height: 0 !important;
     color: var(--black) !important;
     border-radius: 25px 25px !important;
