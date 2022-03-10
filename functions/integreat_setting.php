@@ -35,9 +35,7 @@ function integreat_plugin_options_validate( $input ) {
     $newinput['city'] = trim( $input['city'] );
     $newinput['term'] = trim( $input['term'] );
     $newinput['design'] = trim( $input['design'] );
-    $newinput['image_big'] = trim( $input['image_big'] );
-    $newinput['image_bg'] = trim( $input['image_bg'] );
-    $newinput['image_small'] = trim( $input['image_small'] );
+    $newinput['integreat_alternative_image'] = trim( $input['integreat_alternative_image'] );
     
     if (! preg_match( '/^[a-z0-9]{32}$/i', $newinput['language'] ) && $_POST['integreat_plugin_options_language'] != null) {
         $newinput['language'] = $_POST['integreat_plugin_options_language'];
@@ -51,14 +49,8 @@ function integreat_plugin_options_validate( $input ) {
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['design'] ) && $_POST['integreat_plugin_design'] != null) {
         $newinput['design'] = $_POST['integreat_plugin_design'];
     }
-    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['image_big'] ) && $_POST['integreat_plugin_design_big_image'] != null) {
-        $newinput['image_big'] = $_POST['integreat_plugin_design_big_image'];
-    }
-    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['image_bg'] ) && $_POST['integreat_plugin_design_bg_image'] != null) {
-        $newinput['image_bg'] = $_POST['integreat_plugin_design_bg_image'];
-    }
-    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['image_small'] ) && $_POST['integreat_plugin_design_small_image'] != null) {
-        $newinput['image_small'] = $_POST['integreat_plugin_design_small_image'];
+    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['integreat_alternative_image'] ) && $_POST['integreat_alternative_image'] != null) {
+        $newinput['integreat_alternative_image'] = $_POST['integreat_alternative_image'];
     }
     return $newinput;
 }
@@ -103,21 +95,20 @@ function integreat_plugin_design() {
         <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
         <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
-        <input value="<?php if(isset($options['image_big'])) { echo $options['image_big']; } ?>" name="integreat_plugin_design_big_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') { ?>
         <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
         <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
         <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
-        <input value="<?php if(isset($options['image_bg'])) { echo $options['image_bg']; } ?>" name="integreat_plugin_design_bg_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php
     } else if ($options['design'] == 'integreat_plugin_design_small') {?>
         <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
         <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
         <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
         <br>
-        <input value="<?php if(isset($options['image_small'])) { echo $options['image_small']; } ?>" name="integreat_plugin_design_small_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php
-
     }
 }
