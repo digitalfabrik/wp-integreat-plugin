@@ -16,8 +16,8 @@ msgstr "Kommune"
 msgid "Please note:"
 msgstr "Hinweis:"
 
-msgid "Add the city name as it is in the url slug of Integreat. For example add LkAugsburg instead of Landkreis Augsburg."
-msgstr "Fügen Sie als Kommune den Namen so ein, wie er in der URL der Integreat App erscheint. Zum Beispiel LkAugsburg anstatt Landkreis Augsburg"
+msgid "Please write the city's name as it is inside the Integreat App."
+msgstr "Fügen Sie als Kommune den Namen so ein, wie er in der URL der Integreat App erscheint"
 
 msgid "Search Term"
 msgstr "Suchbegriff"

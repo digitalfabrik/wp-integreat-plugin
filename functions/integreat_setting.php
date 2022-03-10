@@ -80,7 +80,7 @@ function integreat_plugin_options_language() {
 function integreat_plugin_options_city() {
     $options = get_option( 'integreat_plugin_options' );
     echo "<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />";
-    echo "<p><b>" . __("Please note:", "integreat-translation") . "</b> " . __("Add the city name as it is in the url slug of", "integreat-translation") . " <a href='https://www.integreat.app/'> Integreat</a>. " . __("For example add LkAugsburg instead of Landkreis Augsburg.", "integreat-translation") . "</p>";
+    echo "<p><b>" . __("Please note:", "integreat-translation") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-translation") . "</p>";
 }
 
 function integreat_plugin_search_term() {
