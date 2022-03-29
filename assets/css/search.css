@@ -8,12 +8,12 @@
 } 
 
 .integreat_plugin_search {
-    border: 0 !important;
     padding: 11.25pt;
-    height: 46.5pt !important;
+    border: 0 !important;
     width: 187.5pt !important;
+    height: 46.5pt !important;
     border-radius: 18.75pt 18.75pt !important;
-    border: 1.5pt solid black !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
 }
 
 .integreat_plugin_submit {

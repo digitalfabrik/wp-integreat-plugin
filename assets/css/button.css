@@ -3,13 +3,13 @@
     font-weight: bolder;
     color: var(--black) !important;
     text-transform: uppercase !important;
-    border: 5px solid var(--primary) !important;
     background-color: var(--primary) !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
     font-family: "Raleway", "Arial", "sans-serif" !important;
 }
 
 .integreat_submit:hover {
     color: var(--black) !important;
-    border: 5px solid var(--primary) !important;
     background-color: var(--white) !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
 }
