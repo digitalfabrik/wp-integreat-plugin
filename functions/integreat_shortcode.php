@@ -26,7 +26,7 @@ function integreat_render_design_big($options) {
                     z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
                     Lehrstellenbörse und vieles mehr.
                 </p>
-                <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
+                <label class="mb-md"><b>Mehrsprachige Informationen rund um Integration in deiner Region finden</b></label>
                 <div class="integreat_plugin_search_bar">
                     <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                         <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder=<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';}  ?>>
@@ -45,7 +45,7 @@ function integreat_render_design_bg_image($options) {
             <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen aus Ihrer Kommune, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
             z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
             Lehrstellenbörse und vieles mehr.</p>
-            <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
+            <label class="mb-md"><b>Mehrsprachige Informationen rund um Integration in deiner Region finden</b></label>
             <div class="integreat_plugin_search_bar">
                 <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                     <input class="integreat_plugin_search" id="integreat_plugin_search" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" name="query" placeholder="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>">
@@ -65,7 +65,7 @@ function integreat_render_design_small($options) {
             z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
             Lehrstellenbörse und vieles mehr.
         </p>
-        <label class="mb-md"><b>Mehrsprachige Informationen finden</b></label>
+        <label class="mb-md"><b>Mehrsprachige Informationen rund um Integration in deiner Region finden</b></label>
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" placeholder="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>">
@@ -80,7 +80,7 @@ function integreat_render_design_search_widget($options) {
     ?>
     <div id="integreat_plugin_search_widget" class="integreat_plugin_search_widget">
         <img class="mb-md" src="https://integreat.app/app-logo.png">    
-        <label class="mb-sm"><b>Mehrsprachige Informationen finden</b></label>
+        <label class="mb-sm"><b>Mehrsprachige Informationen rund um Integration in deiner Region finden</b></label>
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" placeholder="<?php echo $options['term'] ?>">
