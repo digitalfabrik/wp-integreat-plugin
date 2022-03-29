@@ -9,16 +9,16 @@
 
 .integreat_plugin_search {
     padding: 11.25pt;
-    width: 187.5pt !important;
+    width: 225.5pt !important;
     height: 46.5pt !important;
     border-radius: 18.75pt 18.75pt !important;
     box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
 }
 
 .integreat_plugin_submit {
-    top: 0;
-    left: 131.25pt;
-    height: 46.5pt;
+    top: 0.75pt;
+    left: 131.5pt;
+    height: 45pt;
     min-width: 93.75pt;
     position: absolute;
     border: 0 !important;
