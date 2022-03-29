@@ -9,22 +9,22 @@
 
 .integreat_plugin_search {
     border: 0 !important;
-    padding: 15px;
-    height: 62px !important;
-    width: 250px !important;
-    border-radius: 25px 25px !important;
-    border: 2px solid black !important;
+    padding: 11.25pt;
+    height: 46.5pt !important;
+    width: 187.5pt !important;
+    border-radius: 18.75pt 18.75pt !important;
+    border: 1.5pt solid black !important;
 }
 
 .integreat_plugin_submit {
     top: 0;
-    left: 175px;
-    height: 62px;
-    min-width: 125px;
+    left: 131.25pt;
+    height: 46.5pt;
+    min-width: 93.75pt;
     position: absolute;
     border: 0 !important;
     line-height: 0 !important;
     color: var(--black) !important;
-    border-radius: 25px 25px !important;
+    border-radius: 18.75pt 18.75pt !important;
     background-color: var(--primary) !important;
 }
