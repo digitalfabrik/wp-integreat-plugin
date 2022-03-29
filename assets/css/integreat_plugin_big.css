@@ -4,7 +4,7 @@
         flex-direction: row-reverse;
     }
 
-    .integreat_plugin_big .integreat_plugin_column_1_3 {
+    .integreat_plugin_big .integreat_plugin_column_1_2:first-child {
         display: flex;
         align-items: center;
     }

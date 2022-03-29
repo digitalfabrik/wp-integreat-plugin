@@ -17,10 +17,10 @@ function integreat_shortcode_render_snippet() {
 function integreat_render_design_big($options) {
     ?>
         <div id="integreat_plugin_big" class="integreat_plugin integreat_plugin_big">
-            <div class="integreat_plugin_column integreat_plugin_column_1_3">
+            <div class="integreat_plugin_column integreat_plugin_column_1_2">
                 <img src="<?php if($options['integreat_alternative_image'] != ''){echo $options['integreat_alternative_image'];} else {?> https://integreat-app.de/wp-content/uploads/2020/11/T7A5938-scaled.jpg <?php } ?>">
             </div>
-            <div class="integreat_plugin_column integreat_plugin_column_2_3">
+            <div class="integreat_plugin_column integreat_plugin_column_1_2">
                 <h2 class="mb-md"><b><?php if($options['language'] != 'on') { ?> Kennen Sie schon die Integreat-App? <?php } else { ?> Kennst du schon die Integreat-App? <?php } ?></b></h2>
                 <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen aus Ihrer Kommune, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
                     z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
