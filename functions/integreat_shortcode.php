@@ -79,7 +79,9 @@ function integreat_render_design_small($options) {
 function integreat_render_design_search_widget($options) {
     ?>
     <div id="integreat_plugin_search_widget" class="integreat_plugin_search_widget">
-        <img class="mb-md" src="https://integreat.app/app-logo.png">    
+        <a target="_blank" href="https://www.integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>">
+            <img class="mb-md" src="https://integreat.app/app-logo.png">
+        </a>
         <label class="mb-sm"><b>Mehrsprachige Informationen und Angebote in deiner Region finden</b></label>
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
