@@ -30,7 +30,7 @@ function integreat_render_design_big($options) {
                 <div class="integreat_plugin_search_bar">
                     <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                         <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" placeholder=<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';}  ?>>
-                        <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" value="<?php esc_attr_e( 'Search' ); ?>">
+                        <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
                     </form>
                 </div>
             </div>
@@ -49,7 +49,7 @@ function integreat_render_design_bg_image($options) {
             <div class="integreat_plugin_search_bar">
                 <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                     <input class="integreat_plugin_search" id="integreat_plugin_search" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" name="query" placeholder="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>">
-                    <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" value="<?php esc_attr_e( 'Search' ); ?>">
+                    <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
                 </form>
             </div>
         </div>
@@ -69,7 +69,7 @@ function integreat_render_design_small($options) {
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" placeholder="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>">
-                <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" value="<?php esc_attr_e( 'Search' ); ?>">
+                <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
             </form>
         </div>
     </div>
@@ -84,7 +84,7 @@ function integreat_render_design_search_widget($options) {
         <div class="integreat_plugin_search_bar">
             <form action="https://integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
                 <input class="integreat_plugin_search" id="integreat_plugin_search" name="query" value="<?php if (strlen($options['term']) > 2) { echo $options['term']; } else {echo 'Integrationskurse';} ?>" placeholder="<?php echo $options['term'] ?>">
-                <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" value="<?php esc_attr_e( 'Search' ); ?>">
+                <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
             </form>
         </div>
     </div>
