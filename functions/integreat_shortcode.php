@@ -22,7 +22,7 @@ function integreat_render_design_big($options) {
             </div>
             <div class="integreat_plugin_column integreat_plugin_column_1_2">
                 <h2 class="mb-md"><b><?php if($options['language'] != 'on') { ?> Kennen Sie schon die Integreat-App? <?php } else { ?> Kennst du schon die Integreat-App? <?php } ?></b></h2>
-                <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen aus Ihrer Kommune, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
+                <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen in Ihrer Sprache, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
                     z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
                     Lehrstellenbörse und vieles mehr.
                 </p>
@@ -42,7 +42,7 @@ function integreat_render_design_bg_image($options) {
     ?>
         <div <?php if($options['integreat_alternative_image'] != '') {?> style="background-image: url('<?php echo $options['integreat_alternative_image'] ?>')" <?php } ?>id="integreat_plugin_bg_image" class="integreat_plugin integreat_plugin_layout integreat_plugin_bg_image">
             <h2 class="mb-md"><b><?php if($options['language'] != 'on') { ?> Kennen Sie schon die Integreat-App? <?php } else { ?> Kennst du schon die Integreat-App?<?php } ?></b></h2>
-            <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen aus Ihrer Kommune, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
+            <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen in Ihrer Sprache, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
             z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
             Lehrstellenbörse und vieles mehr.</p>
             <label class="mb-sm"><b>Mehrsprachige Informationen rund um Integration in deiner Region finden</b></label>
@@ -61,7 +61,7 @@ function integreat_render_design_small($options) {
     <div id="integreat_plugin_small" class="integreat_plugin integreat_plugin_small">
         <img class="mb-md" src="<?php if($options['integreat_alternative_image'] != ''){ echo $options['integreat_alternative_image']; }else {?> https://integreat-app.de/wp-content/uploads/2020/11/T7A5938-scaled.jpg <?php } ?>">
         <h2 class="mb-md"><b><?php if($options['language'] != 'on') { ?> Kennen Sie schon die Integreat-App? <?php } else { ?> Kennst du schon die Integreat-App?<?php } ?></b></h2>
-        <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen aus Ihrer Kommune, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
+        <p class="mb-lg"><?php if($options['language'] != 'on') { ?> Hier finden Sie alle wichtigen Informationen in Ihrer Sprache, <?php } else { ?> Hier findest Du alle wichtigen Informationen aus deiner Kommune, <?php } ?>
             z.B. Anmeldung im Bürgerservice, Infos rund um den Arztbesuch,
             Lehrstellenbörse und vieles mehr.
         </p>
