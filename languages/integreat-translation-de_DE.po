@@ -27,3 +27,12 @@ msgstr "Hier können Sie das Standard Hintergrundbild durch ein benutzerdefinier
 
 msgid "Please insert the url of the image here"
 msgstr "Bitte geben Sie hier die URL des Hintergrundbilds an"
+
+msgid "Headline"
+msgstr "Überschrift"
+
+msgid "Paragraph"
+msgstr "Text"
+
+msgid "Notification"
+msgstr "Hinweis"

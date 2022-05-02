@@ -23,10 +23,12 @@ function integreat_render_plugin_settings_page() {
 function integreat_register_settings() {
     register_setting( 'integreat_plugin_options', 'integreat_plugin_options', 'integreat_plugin_options_validate' );
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
-    add_settings_field( 'integreat_plugin_options_language', __('Degree of formality', 'integreat-translation'), 'integreat_plugin_options_language', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_options_city', __('City', 'integreat-translation'), 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_search_term', __('Search Term', 'integreat-translation'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_add_headline', __('Headline','integreat-translation'), 'integreat_plugin_add_headline', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plguin_add_paragraph', __('Paragraph', 'integreat-translation'), 'integreat_plguin_add_paragraph', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_add_notification', __('Notification', 'integreat-translation'), 'integreat_plugin_add_notification', 'integreat_plugin', 'api_settings' );
 }
 add_action( 'admin_init', 'integreat_register_settings' );
 
@@ -36,6 +38,9 @@ function integreat_plugin_options_validate( $input ) {
     $newinput['term'] = trim( $input['term'] );
     $newinput['design'] = trim( $input['design'] );
     $newinput['integreat_alternative_image'] = trim( $input['integreat_alternative_image'] );
+    $newinput['headline'] = trim( $input['headline'] ); 
+    $newinput['paragraph'] = trim( $input['paragraph'] ); 
+    $newinput['notification'] = trim( $input['notification'] ); 
     
     if (! preg_match( '/^[a-z0-9]{32}$/i', $newinput['language'] ) && $_POST['integreat_plugin_options_language'] != null) {
         $newinput['language'] = $_POST['integreat_plugin_options_language'];
@@ -51,6 +56,15 @@ function integreat_plugin_options_validate( $input ) {
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['integreat_alternative_image'] ) && $_POST['integreat_alternative_image'] != null) {
         $newinput['integreat_alternative_image'] = $_POST['integreat_alternative_image'];
+    }
+    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['headline'] ) && $_POST['integreat_plugin_headline'] != null) {
+        $newinput['headline'] = $_POST['integreat_plugin_headline'];
+    }
+    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['paragraph'] ) && $_POST['integreat_plugin_paragraph'] != null) {
+        $newinput['paragraph'] = $_POST['integreat_plugin_paragraph'];
+    }
+    if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['notification'] ) && $_POST['integreat_plugin_notification'] != null) {
+        $newinput['notification'] = $_POST['integreat_plugin_notification'];
     }
     return $newinput;
 }
@@ -89,7 +103,7 @@ function integreat_plugin_design() {
             <option <?php if ($options['design'] == 'integreat_plugin_design_big') {?> selected="selected" <?php } ?> value="integreat_plugin_design_big">Vollflächiger Zwei-Spalter</option>
             <option <?php if ($options['design'] == 'integreat_plugin_design_bg_image') {?> selected="selected" <?php } ?> value="integreat_plugin_design_bg_image">Vollflächiger Ein-Spalter</option>
         </select>
-    <?php
+        <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>
         <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
         <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
@@ -111,4 +125,37 @@ function integreat_plugin_design() {
         <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php
     }
+}
+
+function integreat_plugin_add_headline() {
+    $options = get_option( 'integreat_plugin_options' );
+    ?>
+        <div>
+            <textarea name="integreat_plugin_headline">
+                <?= $options['headline'] ?>
+            </textarea>
+        </div>
+    <?php
+}
+
+function integreat_plguin_add_paragraph() {
+    $options = get_option( 'integreat_plugin_options' );
+    ?>
+        <div>
+            <textarea name="integreat_plugin_paragraph">
+                <?= $options['paragraph'] ?>
+            </textarea>
+        </div>
+    <?php
+}
+
+function integreat_plugin_add_notification() {
+    $options = get_option( 'integreat_plugin_options' );
+    ?>
+        <div>
+            <textarea name="integreat_plugin_notification">
+                <?php echo $options['notification'] ?>
+            </textarea>
+        </div>
+    <?php
 }
