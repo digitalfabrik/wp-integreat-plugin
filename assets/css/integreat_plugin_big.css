@@ -1,3 +1,6 @@
+.integreat_plugin_column {
+    position: relative;
+}
 @media only screen and (min-width: 768px) {
     #integreat_plugin_big {
         display: flex;

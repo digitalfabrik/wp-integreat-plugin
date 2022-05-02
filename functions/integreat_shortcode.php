@@ -38,6 +38,9 @@ function integreat_render_design_big($options) {
 function integreat_render_design_bg_image($options) {
     ?>
         <div <?php if($options['integreat_alternative_image'] != '') {?> style="background-image: url('<?php echo $options['integreat_alternative_image'] ?>')" <?php } ?>id="integreat_plugin_bg_image" class="integreat_plugin integreat_plugin_layout integreat_plugin_bg_image">
+            <a class="integreat_plugin_icon_small" target="_blank" href="https://www.integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>">
+                <img class="mb-md" src="https://integreat.app/app-logo.png">
+            </a>
             <h2 class="mb-md"><b><?= $options['headline'] ?></b></h2>
             <p class="mb-lg"><?= $options['paragraph'] ?></p>
             <label class="mb-sm"><b><?= $options['notification'] ?></b></label>
@@ -54,6 +57,9 @@ function integreat_render_design_bg_image($options) {
 function integreat_render_design_small($options) {
     ?>
     <div id="integreat_plugin_small" class="integreat_plugin integreat_plugin_small">
+        <a class="integreat_plugin_icon_small" target="_blank" href="https://www.integreat.app/<?php echo strtolower(get_option('integreat_plugin_options')['city']) ?>">
+            <img class="mb-md" src="https://integreat.app/app-logo.png">
+        </a>
         <img class="mb-md" src="<?php if($options['integreat_alternative_image'] != ''){ echo $options['integreat_alternative_image']; }else {?> https://integreat-app.de/wp-content/uploads/2020/11/T7A5938-scaled.jpg <?php } ?>">
         <h2 class="mb-md"><b><?= $options['headline'] ?></b></h2>
         <p class="mb-lg"><?= $options['paragraph'] ?></p>
