@@ -8,8 +8,10 @@
 } 
 
 .integreat_plugin_search {
+    border: 0;
     padding: 11.25pt;
     font-size: 12.75pt;
+    color: var(--black);
     width: 225.5pt !important;
     height: 46.5pt !important;
     padding-right: 100pt !important;
