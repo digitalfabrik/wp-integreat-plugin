@@ -1,6 +1,6 @@
 # wp-integreat-plugin
 This repository contains the integreat plugin for wordpress.
-With this plugin you can embed a search widget on to your wordpress website.
+With this plugin you can embed a search widget linked to the [Integreat App](https://www.integreat.app) on to your wordpress website.
 
 # How to setup the project locally 
 1. Install a local wordpress project
