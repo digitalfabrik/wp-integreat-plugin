@@ -1,6 +1,6 @@
 <?php 
 /**
- * Plugin Name: Integreat Wordpress Plugin
+ * Plugin Name: Integreat Search Widget
  * Description: This plugin embeds a search bar for the app Integreat. 
  * Plugin URI:  https://integreat.app
  * Version:     1.0
