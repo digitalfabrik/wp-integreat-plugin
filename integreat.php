@@ -6,7 +6,7 @@
  * Version:     1.0
  * Author:      Johannes Stock
  * Author URI:  none
- * License:     GPLv2
+ * License:     Apache 2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
  * Text Domain: integreat
  * Domain Path: /languages
