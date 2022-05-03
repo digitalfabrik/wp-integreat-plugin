@@ -7,6 +7,8 @@
  * Author:      Johannes Stock
  * Text Domain: integreat
  * Author URI:  none
+ * License:     GPLv2
+ * License URI: https://www.gnu.org/licenses/license-list.html#apache2
  * Domain Path: /languages
  */
 
