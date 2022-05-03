@@ -5,10 +5,10 @@
  * Plugin URI:  https://integreat.app
  * Version:     1.0
  * Author:      Johannes Stock
- * Text Domain: integreat
  * Author URI:  none
  * License:     GPLv2
- * License URI: https://www.gnu.org/licenses/license-list.html#apache2
+ * License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
+ * Text Domain: integreat
  * Domain Path: /languages
  */
 
