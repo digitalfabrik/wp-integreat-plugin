@@ -132,7 +132,7 @@ function integreat_plugin_add_headline() {
     ?>
         <div>
             <textarea name="integreat_plugin_headline">
-                <?= $options['headline'] ?>
+                <?php echo $options['headline'] ?>
             </textarea>
         </div>
     <?php
@@ -143,7 +143,7 @@ function integreat_plguin_add_paragraph() {
     ?>
         <div>
             <textarea name="integreat_plugin_paragraph">
-                <?= $options['paragraph'] ?>
+                <?php echo $options['paragraph'] ?>
             </textarea>
         </div>
     <?php
