@@ -70,28 +70,28 @@ function integreat_plugin_options_validate( $input ) {
 }
 
 function integreat_plugin_section_text() {
-    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>';
-    echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
+    echo esc_html('<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>');
+    echo esc_html('<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>');  
 }
 
 function integreat_plugin_options_language() {
     $options = get_option( 'integreat_plugin_options' );
     if ($options['language'] == 'on') {
-        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-search-widget');
+        echo esc_html("<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-search-widget'));
     } else {
-        echo "<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-search-widget');
+        echo esc_html("<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-search-widget'));
     }
 }
 
 function integreat_plugin_options_city() {
     $options = get_option( 'integreat_plugin_options' );
-    echo "<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />";
-    echo "<p><b>" . __("Please note:", "integreat-search-widget") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-search-widget") . "</p>";
+    echo esc_html("<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />");
+    echo esc_html("<p><b>" . __("Please note:", "integreat-search-widget") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-search-widget") . "</p>");
 }
 
 function integreat_plugin_search_term() {
     $options = get_option( 'integreat_plugin_options' );
-    echo "<input id='integreat_plugin_search_term' placeholder='Suchbegriff' name='integreat_plugin_search_term' type='text' value='" . (esc_attr( $options['term'] ) ? esc_attr( $options['term'] ) : 'Integrationskurse') . "'/>";
+    echo esc_html("<input id='integreat_plugin_search_term' placeholder='Suchbegriff' name='integreat_plugin_search_term' type='text' value='" . (esc_attr( $options['term'] ) ? esc_attr( $options['term'] ) : 'Integrationskurse') . "'/>");
 }
 
 function integreat_plugin_design() {
@@ -105,24 +105,24 @@ function integreat_plugin_design() {
         </select>
         <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>
-        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
+        <p><b><?php echo esc_html(__('Please note:', 'integreat-search-widget'));  ?></b>
+        <?php echo esc_html(__('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget')) ?></p>
+        <label><?php echo esc_html(__('Please insert the url of the image here', 'integreat-search-widget')); ?></label>
         <br>
-        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo esc_attr($options['integreat_alternative_image']); } ?>" name="integreat_alternative_image">
     <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') { ?>
-        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
+        <p><b><?php echo esc_html(__('Please note:', 'integreat-search-widget')); ?></b>
+        <?php echo esc_html(__('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget')) ?></p>
+        <label><?php echo esc_html(__('Please insert the url of the image here', 'integreat-search-widget')); ?></label>
         <br>
-        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo esc_attr($options['integreat_alternative_image']); } ?>" name="integreat_alternative_image">
     <?php
     } else if ($options['design'] == 'integreat_plugin_design_small') {?>
-        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
+        <p><b><?php echo esc_html(__('Please note:', 'integreat-search-widget')); ?></b>
+        <?php echo esc_html(__('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget')) ?></p>
+        <label><?php echo esc_html(__('Please insert the url of the image here', 'integreat-search-widget')); ?></label>
         <br>
-        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
+        <input value="<?php if(isset($options['integreat_alternative_image'])) { echo esc_attr($options['integreat_alternative_image']); } ?>" name="integreat_alternative_image">
     <?php
     }
 }
@@ -132,7 +132,7 @@ function integreat_plugin_add_headline() {
     ?>
         <div>
             <textarea name="integreat_plugin_headline">
-                <?php echo $options['headline'] ?>
+                <?php echo esc_textarea($options['headline']) ?>
             </textarea>
         </div>
     <?php
@@ -143,7 +143,7 @@ function integreat_plguin_add_paragraph() {
     ?>
         <div>
             <textarea name="integreat_plugin_paragraph">
-                <?php echo $options['paragraph'] ?>
+                <?php echo esc_textarea($options['paragraph']) ?>
             </textarea>
         </div>
     <?php
@@ -154,7 +154,7 @@ function integreat_plugin_add_notification() {
     ?>
         <div>
             <textarea name="integreat_plugin_notification">
-                <?php echo $options['notification'] ?>
+                <?php echo esc_textarea($options['notification']) ?>
             </textarea>
         </div>
     <?php
