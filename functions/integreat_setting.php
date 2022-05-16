@@ -23,12 +23,12 @@ function integreat_render_plugin_settings_page() {
 function integreat_register_settings() {
     register_setting( 'integreat_plugin_options', 'integreat_plugin_options', 'integreat_plugin_options_validate' );
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
-    add_settings_field( 'integreat_plugin_options_city', __('City', 'integreat-translation'), 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_search_term', __('Search Term', 'integreat-translation'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_options_city', __('City', 'integreat-search-widget'), 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_search_term', __('Search Term', 'integreat-search-widget'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_add_headline', __('Headline','integreat-translation'), 'integreat_plugin_add_headline', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plguin_add_paragraph', __('Paragraph', 'integreat-translation'), 'integreat_plguin_add_paragraph', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_add_notification', __('Notification', 'integreat-translation'), 'integreat_plugin_add_notification', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_add_headline', __('Headline','integreat-search-widget'), 'integreat_plugin_add_headline', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plguin_add_paragraph', __('Paragraph', 'integreat-search-widget'), 'integreat_plguin_add_paragraph', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_add_notification', __('Notification', 'integreat-search-widget'), 'integreat_plugin_add_notification', 'integreat_plugin', 'api_settings' );
 }
 add_action( 'admin_init', 'integreat_register_settings' );
 
@@ -70,23 +70,23 @@ function integreat_plugin_options_validate( $input ) {
 }
 
 function integreat_plugin_section_text() {
-    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-translation') . '</p>';
-    echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-translation') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
+    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>';
+    echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
 }
 
 function integreat_plugin_options_language() {
     $options = get_option( 'integreat_plugin_options' );
     if ($options['language'] == 'on') {
-        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-translation');
+        echo "<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-search-widget');
     } else {
-        echo "<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-translation');
+        echo "<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-search-widget');
     }
 }
 
 function integreat_plugin_options_city() {
     $options = get_option( 'integreat_plugin_options' );
     echo "<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />";
-    echo "<p><b>" . __("Please note:", "integreat-translation") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-translation") . "</p>";
+    echo "<p><b>" . __("Please note:", "integreat-search-widget") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-search-widget") . "</p>";
 }
 
 function integreat_plugin_search_term() {
@@ -105,22 +105,22 @@ function integreat_plugin_design() {
         </select>
         <?php
     if ($options['design'] == 'integreat_plugin_design_big') { ?>
-        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
+        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
         <br>
         <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php } else if ($options['design'] == 'integreat_plugin_design_bg_image') { ?>
-        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
+        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
         <br>
         <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php
     } else if ($options['design'] == 'integreat_plugin_design_small') {?>
-        <p><b><?php echo __('Please note:', 'integreat-translation'); ?></b>
-        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-translation') ?></p>
-        <label><?php echo __('Please insert the url of the image here', 'integreat-translation'); ?></label>
+        <p><b><?php echo __('Please note:', 'integreat-search-widget'); ?></b>
+        <?php echo __('If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used.', 'integreat-search-widget') ?></p>
+        <label><?php echo __('Please insert the url of the image here', 'integreat-search-widget'); ?></label>
         <br>
         <input value="<?php if(isset($options['integreat_alternative_image'])) { echo $options['integreat_alternative_image']; } ?>" name="integreat_alternative_image">
     <?php
