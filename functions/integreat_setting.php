@@ -33,45 +33,45 @@ function integreat_register_settings() {
 add_action( 'admin_init', 'integreat_register_settings' );
 
 function integreat_plugin_options_validate( $input ) {
-    $newinput['language'] = trim( $input['language'] );
-    $newinput['city'] = trim( $input['city'] );
-    $newinput['term'] = trim( $input['term'] );
-    $newinput['design'] = trim( $input['design'] );
-    $newinput['integreat_alternative_image'] = trim( $input['integreat_alternative_image'] );
-    $newinput['headline'] = trim( $input['headline'] ); 
-    $newinput['paragraph'] = trim( $input['paragraph'] ); 
-    $newinput['notification'] = trim( $input['notification'] ); 
+    $newinput['language'] = sanitize_text_field(trim( $input['language'] ));
+    $newinput['city'] = sanitize_text_field(trim( $input['city'] ));
+    $newinput['term'] = sanitize_text_field(trim( $input['term'] ));
+    $newinput['design'] = sanitize_option(trim( $input['design'] ));
+    $newinput['integreat_alternative_image'] = sanitize_text_field(trim( $input['integreat_alternative_image'] ));
+    $newinput['headline'] = sanitize_textarea_field(trim( $input['headline'] )); 
+    $newinput['paragraph'] = sanitize_textarea_field(trim( $input['paragraph'] )); 
+    $newinput['notification'] = sanitize_textarea_field(trim( $input['notification'] )); 
     
     if (! preg_match( '/^[a-z0-9]{32}$/i', $newinput['language'] ) && $_POST['integreat_plugin_options_language'] != null) {
-        $newinput['language'] = $_POST['integreat_plugin_options_language'];
+        $newinput['language'] = sanitize_text_field($_POST['integreat_plugin_options_language']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['city'] ) && $_POST['integreat_plugin_options_city'] != null ) {
-        $newinput['city'] = $_POST['integreat_plugin_options_city'];
+        $newinput['city'] = sanitize_text_field($_POST['integreat_plugin_options_city']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['term'] ) && $_POST['integreat_plugin_search_term'] != null) {
-        $newinput['term'] = $_POST['integreat_plugin_search_term'];
+        $newinput['term'] = sanitize_text_field($_POST['integreat_plugin_search_term']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['design'] ) && $_POST['integreat_plugin_design'] != null) {
-        $newinput['design'] = $_POST['integreat_plugin_design'];
+        $newinput['design'] = sanitize_option($_POST['integreat_plugin_design']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['integreat_alternative_image'] ) && $_POST['integreat_alternative_image'] != null) {
-        $newinput['integreat_alternative_image'] = $_POST['integreat_alternative_image'];
+        $newinput['integreat_alternative_image'] = sanitize_text_field($_POST['integreat_alternative_image']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['headline'] ) && $_POST['integreat_plugin_headline'] != null) {
-        $newinput['headline'] = $_POST['integreat_plugin_headline'];
+        $newinput['headline'] = sanitize_textarea_field($_POST['integreat_plugin_headline']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['paragraph'] ) && $_POST['integreat_plugin_paragraph'] != null) {
-        $newinput['paragraph'] = $_POST['integreat_plugin_paragraph'];
+        $newinput['paragraph'] = sanitize_textarea_field($_POST['integreat_plugin_paragraph']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['notification'] ) && $_POST['integreat_plugin_notification'] != null) {
-        $newinput['notification'] = $_POST['integreat_plugin_notification'];
+        $newinput['notification'] = sanitize_textarea_field($_POST['integreat_plugin_notification']);
     }
     return $newinput;
 }
 
 function integreat_plugin_section_text() {
-    echo esc_html('<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>');
-    echo esc_html('<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>');  
+    echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>';
+    echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
 }
 
 function integreat_plugin_options_language() {
@@ -85,13 +85,13 @@ function integreat_plugin_options_language() {
 
 function integreat_plugin_options_city() {
     $options = get_option( 'integreat_plugin_options' );
-    echo esc_html("<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />");
-    echo esc_html("<p><b>" . __("Please note:", "integreat-search-widget") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-search-widget") . "</p>");
+    echo "<input id='integreat_plugin_options_city' placeholder='Augsburg' name='integreat_plugin_options_city' type='text' value='" . (esc_attr( $options['city'] ) ? esc_attr( $options['city'] ) : 'Augsburg') . "' />";
+    echo "<p><b>" . __("Please note:", "integreat-search-widget") . "</b> " . __("Please write the city's name as it is inside the Integreat App.", "integreat-search-widget") . "</p>";
 }
 
 function integreat_plugin_search_term() {
     $options = get_option( 'integreat_plugin_options' );
-    echo esc_html("<input id='integreat_plugin_search_term' placeholder='Suchbegriff' name='integreat_plugin_search_term' type='text' value='" . (esc_attr( $options['term'] ) ? esc_attr( $options['term'] ) : 'Integrationskurse') . "'/>");
+    echo "<input id='integreat_plugin_search_term' placeholder='Suchbegriff' name='integreat_plugin_search_term' type='text' value='" . (esc_attr( $options['term'] ) ? esc_attr( $options['term'] ) : 'Integrationskurse') . "'/>";
 }
 
 function integreat_plugin_design() {
