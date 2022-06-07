@@ -24,7 +24,7 @@ function integreat_register_settings() {
     register_setting( 'integreat_plugin_options', 'integreat_plugin_options', 'integreat_plugin_options_validate' );
     add_settings_section( 'api_settings', 'Integreat', 'integreat_plugin_section_text', 'integreat_plugin' );
     add_settings_field( 'integreat_plugin_options_city', __('City', 'integreat-search-widget'), 'integreat_plugin_options_city', 'integreat_plugin', 'api_settings' );
-    add_settings_field( 'integreat_plugin_search_term', __('Search Term', 'integreat-search-widget'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
+    add_settings_field( 'integreat_plugin_search_term', __('Search Term (Placeholder)', 'integreat-search-widget'), 'integreat_plugin_search_term', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_design', 'Template', 'integreat_plugin_design', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plugin_add_headline', __('Headline','integreat-search-widget'), 'integreat_plugin_add_headline', 'integreat_plugin', 'api_settings' );
     add_settings_field( 'integreat_plguin_add_paragraph', __('Paragraph', 'integreat-search-widget'), 'integreat_plguin_add_paragraph', 'integreat_plugin', 'api_settings' );
@@ -36,7 +36,7 @@ function integreat_plugin_options_validate( $input ) {
     $newinput['language'] = sanitize_text_field(trim( $input['language'] ));
     $newinput['city'] = sanitize_text_field(trim( $input['city'] ));
     $newinput['term'] = sanitize_text_field(trim( $input['term'] ));
-    $newinput['design'] = sanitize_option(trim( $input['design'] ));
+    $newinput['design'] = trim( $input['design']);
     $newinput['integreat_alternative_image'] = sanitize_text_field(trim( $input['integreat_alternative_image'] ));
     $newinput['headline'] = sanitize_textarea_field(trim( $input['headline'] )); 
     $newinput['paragraph'] = sanitize_textarea_field(trim( $input['paragraph'] )); 
@@ -52,7 +52,7 @@ function integreat_plugin_options_validate( $input ) {
         $newinput['term'] = sanitize_text_field($_POST['integreat_plugin_search_term']);
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['design'] ) && $_POST['integreat_plugin_design'] != null) {
-        $newinput['design'] = sanitize_option($_POST['integreat_plugin_design']);
+        $newinput['design'] = $_POST['integreat_plugin_design'];
     }
     if ( ! preg_match( '/^[a-z0-9]{32}$/i', $newinput['integreat_alternative_image'] ) && $_POST['integreat_alternative_image'] != null) {
         $newinput['integreat_alternative_image'] = sanitize_text_field($_POST['integreat_alternative_image']);
@@ -72,15 +72,6 @@ function integreat_plugin_options_validate( $input ) {
 function integreat_plugin_section_text() {
     echo '<p>' . __('Here you can change the settings for using the Integreat App Plugin.', 'integreat-search-widget') . '</p>';
     echo '<p>' . __('Add the Integreat search widget by inserting this shortcode', 'integreat-search-widget') . '<span class="font-highlighting font-warning"> [integreat]</span>.</p>';  
-}
-
-function integreat_plugin_options_language() {
-    $options = get_option( 'integreat_plugin_options' );
-    if ($options['language'] == 'on') {
-        echo esc_html("<input name='integreat_plugin_options_language' type='checkbox' checked>" . __('Use second form singular', 'integreat-search-widget'));
-    } else {
-        echo esc_html("<input name='integreat_plugin_options_language' type='checkbox'>" . __('Use second form singular', 'integreat-search-widget'));
-    }
 }
 
 function integreat_plugin_options_city() {

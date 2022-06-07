@@ -19,8 +19,8 @@ msgstr "Hinweis:"
 msgid "Please write the city's name as it is inside the Integreat App."
 msgstr "Fügen Sie als Kommune den Namen so ein, wie er in der URL der Integreat App erscheint"
 
-msgid "Search Term"
-msgstr "Suchbegriff"
+msgid "Search Term (Placeholder)"
+msgstr "Suchbegriff (Platzhalter)"
 
 msgid "If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used."
 msgstr "Hier können Sie das Standard Hintergrundbild durch ein benutzerdefinierten Bild ersetzen"
