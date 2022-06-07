@@ -1,0 +1,38 @@
+msgid "Here you can change the settings for using the Integreat App Plugin."
+msgstr "Hier können Sie die Einstellungen für das Plugin der Integreat App anpassen."
+
+msgid "Add the Integreat search widget by inserting this shortcode"
+msgstr "Sie können das Integreat Suchwidget über diesen Shortcode hinzufügen"
+
+msgid "Degree of formality"
+msgstr "Grad der Formalität"
+
+msgid "Use second form singular"
+msgstr "Du-Form verwenden"
+
+msgid "City"
+msgstr "Kommune"
+
+msgid "Please note:"
+msgstr "Hinweis:"
+
+msgid "Please write the city's name as it is inside the Integreat App."
+msgstr "Fügen Sie als Kommune den Namen so ein, wie er in der URL der Integreat App erscheint"
+
+msgid "Search Term"
+msgstr "Suchbegriff"
+
+msgid "If you want to, you can add a custom image for this template here. Otherwise the default Integreat image will be used."
+msgstr "Hier können Sie das Standard Hintergrundbild durch ein benutzerdefinierten Bild ersetzen"
+
+msgid "Please insert the url of the image here"
+msgstr "Bitte geben Sie hier die URL des Hintergrundbilds an"
+
+msgid "Headline"
+msgstr "Überschrift"
+
+msgid "Paragraph"
+msgstr "Text"
+
+msgid "Notification"
+msgstr "Hinweis"

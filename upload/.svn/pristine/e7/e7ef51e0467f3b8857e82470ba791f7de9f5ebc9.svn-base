@@ -1,0 +1,33 @@
+/* form */
+.integreat_plugin_search_bar {   
+    position: relative;
+}
+
+.integreat_plugin label {
+    display: block;
+} 
+
+.integreat_plugin_search {
+    border: 0;
+    padding: 11.25pt;
+    font-size: 12.75pt;
+    color: var(--black);
+    width: 225.5pt !important;
+    height: 46.5pt !important;
+    padding-right: 100pt !important;
+    border-radius: 18.75pt 18.75pt !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
+}
+
+.integreat_plugin_submit {
+    top: 0.75pt;
+    left: 131.5pt;
+    height: 45pt;
+    min-width: 93.75pt;
+    position: absolute;
+    border: 0 !important;
+    line-height: 0 !important;
+    color: var(--black) !important;
+    border-radius: 18.75pt 18.75pt !important;
+    background-color: var(--primary) !important;
+}

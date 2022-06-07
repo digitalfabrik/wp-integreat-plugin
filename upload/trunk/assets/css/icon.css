@@ -1,0 +1,12 @@
+.integreat_plugin_icon_small {
+    top: 7pt;
+    left: 7pt;
+    width: 100px;
+    position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+    .integreat_plugin_icon_small {
+        width: 150px;
+    }
+}

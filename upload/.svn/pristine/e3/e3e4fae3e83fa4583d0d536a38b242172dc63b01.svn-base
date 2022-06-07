@@ -1,0 +1,14 @@
+.font-highlighting {
+    font-weight: bold;
+    letter-spacing: 2.25pt;
+    color: var(--primary);
+}
+
+.font-warning {
+    color: var(--red);
+    letter-spacing: 1.5pt;
+}
+
+label b {
+    font-size: 17pt;
+}

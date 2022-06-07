@@ -1,0 +1,15 @@
+.integreat_plugin_submit {
+    max-height: 46.5pt;
+    font-weight: bolder;
+    text-transform: capitalize !important;
+    color: var(--black) !important;
+    background-color: var(--primary) !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
+    font-family: "Raleway", "Arial", "sans-serif" !important;
+}
+
+.integreat_plugin_submit:hover {
+    color: var(--white) !important;
+    background-color: var(--black) !important;
+    box-shadow: 0pt 0pt 3pt rgba(0,0,0,0.23) !important;
+}

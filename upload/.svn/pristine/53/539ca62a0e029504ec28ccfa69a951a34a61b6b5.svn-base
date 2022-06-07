@@ -1,0 +1,18 @@
+.integreat_plugin_column {
+    position: relative;
+}
+@media only screen and (min-width: 768px) {
+    #integreat_plugin_big {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .integreat_plugin_big .integreat_plugin_column_1_2:first-child {
+        display: flex;
+        align-items: center;
+    }
+
+    .integreat_plugin_column_1_2:last-child {
+        margin-right: 22.5pt;
+    }
+}

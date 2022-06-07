@@ -1,0 +1,15 @@
+#integreat_plugin_search_widget label {
+    display: block !important;
+}
+
+#integreat_plugin_search_widget #integreat_plugin_search {
+    width: 300pt !important;
+}
+
+#integreat_plugin_search_widget #integreat_plugin_submit {
+    left: 205pt !important;
+}
+
+#integreat_plugin_search_widget label {
+    width: 300pt;
+}

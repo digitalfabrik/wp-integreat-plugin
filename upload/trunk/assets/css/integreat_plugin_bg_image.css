@@ -1,0 +1,15 @@
+#integreat_plugin_bg_image {
+    padding: 37.5pt 22.5pt;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white) !important;
+    background-image: url('../images/integreat_plugin_image.png'); /*images/integreat_plugin_image.jpg*/
+}
+
+.integreat_plugin_bg_image .integreat_plugin_icon_small img {
+    position: absolute;
+    top: 30.5pt;
+    left: 15.5pt;
+}

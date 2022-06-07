@@ -1,0 +1,6 @@
+:root {
+    --white: #ffffff;
+    --black: #3A4049;
+    --primary: #ffd905;
+    --red: #F4442E;
+}

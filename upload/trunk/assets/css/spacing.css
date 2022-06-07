@@ -1,0 +1,12 @@
+/* margins and paddings */
+.mb-sm {
+    margin-bottom: 16.5pt;
+}
+
+.mb-md {
+    margin-bottom: 22.5pt;
+}
+
+.mb-lg {
+    margin-bottom: 37.5pt;
+}

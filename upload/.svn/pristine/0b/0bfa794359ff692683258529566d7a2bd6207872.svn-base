@@ -1,0 +1,9 @@
+.integreat_plugin, 
+.integreat_plugin h2 {
+    font-size: 12pt;
+    font-family: "Raleway", sans-serif;
+}
+
+.integreat_plugin h2  {
+    font-size: 26pt;
+}
