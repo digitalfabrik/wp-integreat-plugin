@@ -123,7 +123,11 @@ function integreat_plugin_add_headline() {
     ?>
         <div>
             <textarea name="integreat_plugin_headline">
-                <?php echo esc_textarea($options['headline']) ?>
+                <?php if ($options['headline'] != null) {
+                    echo esc_textarea($options['headline']);
+                } else {
+                    echo 'Kennen Sie schon die Integreat-App?';
+                } ?>
             </textarea>
         </div>
     <?php
@@ -134,7 +138,11 @@ function integreat_plguin_add_paragraph() {
     ?>
         <div>
             <textarea name="integreat_plugin_paragraph">
-                <?php echo esc_textarea($options['paragraph']) ?>
+                <?php if ($options['paragraph'] != null) {
+                    echo esc_textarea($options['paragraph']);
+                } else {
+                    echo 'Hier finden Sie alle wichtigen Informationen in Ihrer Sprache, z.B. Anmeldungen im Bürgerservice, Infos rund um den Arztbesuch, Lehrstellenbörse und vieles mehr';
+                } ?>
             </textarea>
         </div>
     <?php
@@ -145,7 +153,11 @@ function integreat_plugin_add_notification() {
     ?>
         <div>
             <textarea name="integreat_plugin_notification">
-                <?php echo esc_textarea($options['notification']) ?>
+                <?php if ($options['notification'] != null) {
+                    echo esc_textarea($options['notification']); }
+                else {
+                    echo 'Mehrsprachige Informationen in Augsburg finden!';
+                } ?>
             </textarea>
         </div>
     <?php
