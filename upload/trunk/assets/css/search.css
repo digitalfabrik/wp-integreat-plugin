@@ -12,7 +12,7 @@
     padding: 11.25pt;
     font-size: 12.75pt;
     color: var(--black);
-    width: 225.5pt !important;
+    width: 100% !important;
     height: 46.5pt !important;
     padding-right: 100pt !important;
     border-radius: 18.75pt 18.75pt !important;
@@ -20,8 +20,8 @@
 }
 
 .integreat_plugin_submit {
+    right: 0;
     top: 0.75pt;
-    left: 131.5pt;
     height: 45pt;
     min-width: 93.75pt;
     position: absolute;
