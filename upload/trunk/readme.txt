@@ -3,7 +3,7 @@ Contributors: jstock
 Donate link: 
 Tags: integreat, search
 Requires at least: 4.7
-Tested up to: 6.0
+Tested up to: 5.9.3
 Stable tag: 1.0
 Requires PHP: 7.0
 License: Apache 2.0
@@ -15,9 +15,6 @@ With this plugin you can embed a search widget linked to the https://www.integre
 # How to setup the project locally 
 1. Install a local wordpress project
 2. Then clone this project into wp-content/plugins folder.
-
-== Screenshots == 
-1. Screenshot shows logo of Integreat
 
 # License
 This project is licensed under the Apache 2.0 License, see license.txt.
