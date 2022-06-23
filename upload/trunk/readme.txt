@@ -9,7 +9,6 @@ Requires PHP: 7.0
 License: Apache 2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
 
-# wp-integreat-plugin
 This repository contains the integreat plugin for wordpress.
 With this plugin you can embed a search widget linked to the https://www.integreat.app on to your wordpress website.
 
