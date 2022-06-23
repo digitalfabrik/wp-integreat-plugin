@@ -3,13 +3,13 @@
 }
 
 #integreat_plugin_search_widget #integreat_plugin_search {
-    width: 300pt !important;
+    width: 100% !important;
 }
 
 #integreat_plugin_search_widget #integreat_plugin_submit {
-    left: 205pt !important;
+    right: 0 !important;
 }
 
 #integreat_plugin_search_widget label {
-    width: 300pt;
+    width: 100%;
 }
