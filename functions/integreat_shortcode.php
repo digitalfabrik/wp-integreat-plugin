@@ -4,17 +4,18 @@ add_shortcode('integreat', 'integreat_shortcode_render_snippet');
 function integreat_shortcode_render_snippet() {
     $options = get_option( 'integreat_plugin_options' );
     if ($options['design']  == 'integreat_plugin_design_bg_image' ) {
-        integreat_render_design_bg_image($options);
+        return integreat_render_design_bg_image($options);
     } else if ($options['design'] == 'integreat_plugin_design_small') {
-        integreat_render_design_small($options);
+        return integreat_render_design_small($options);
     } else if ($options['design'] == 'integreat_plugin_design_big') {
-        integreat_render_design_big($options);
+        return integreat_render_design_big($options);
     } else {
-        integreat_render_design_search_widget($options);
+        return integreat_render_design_search_widget($options);
     }
 }
 
 function integreat_render_design_big($options) {
+    ob_start();
     ?>
         <div id="integreat_plugin_big" class="integreat_plugin integreat_plugin_big">
             <div class="integreat_plugin_column integreat_plugin_column_1_2">
@@ -33,33 +34,34 @@ function integreat_render_design_big($options) {
             </div>
         </div>
     <?php
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
 }
 
 function integreat_render_design_bg_image($options) {
     ob_start();
-    // include('design_bg_image.php');
+    ?>
+        <div <?php if($options['integreat_alternative_image'] != '') {?> style="background-image: url('<?php echo esc_url($options['integreat_alternative_image']) ?>')" <?php } ?>id="integreat_plugin_bg_image" class="integreat_plugin integreat_plugin_layout integreat_plugin_bg_image">
+            <a class="integreat_plugin_icon_small" target="_blank" href="https://www.integreat.app/<?php echo esc_html(strtolower(get_option('integreat_plugin_options')['city'])) ?>">
+                <img class="mb-md" src="https://integreat.app/app-logo.png">
+            </a>
+            <h2 class="mb-md"><b><?php echo esc_html($options['headline']) ?></b></h2>
+            <p class="mb-lg"><?php echo esc_html($options['paragraph']) ?></p>
+            <label class="mb-sm"><b><?php echo esc_html($options['notification']) ?></b></label>
+            <div class="integreat_plugin_search_bar">
+                <form action="https://integreat.app/<?php echo esc_html(strtolower(get_option('integreat_plugin_options')['city'])) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
+                    <input class="integreat_plugin_search" id="integreat_plugin_search" value="<?php if (strlen($options['term']) > 2) { echo esc_attr($options['term']); } else {echo esc_attr('Integrationskurse');} ?>" name="query" placeholder="<?php if (strlen($options['term']) > 2) { echo esc_attr($options['term']); } else {echo esc_attr('Integrationskurse');} ?>">
+                    <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
+                </form>
+            </div>
+        </div>
+    <?php
 
-    $data = ob_get_contents();
+    $html = ob_get_contents();
     ob_end_clean();
-    return $data;
+    return $html;
 }
-
-/* 
-<div <?php if($options['integreat_alternative_image'] != '') {?> style="background-image: url('<?php echo esc_url($options['integreat_alternative_image']) ?>')" <?php } ?>id="integreat_plugin_bg_image" class="integreat_plugin integreat_plugin_layout integreat_plugin_bg_image">
-    <a class="integreat_plugin_icon_small" target="_blank" href="https://www.integreat.app/<?php echo esc_html(strtolower(get_option('integreat_plugin_options')['city'])) ?>">
-        <img class="mb-md" src="https://integreat.app/app-logo.png">
-    </a>
-    <h2 class="mb-md"><b><?php echo esc_html($options['headline']) ?></b></h2>
-    <p class="mb-lg"><?php echo esc_html($options['paragraph']) ?></p>
-    <label class="mb-sm"><b><?php echo esc_html($options['notification']) ?></b></label>
-    <div class="integreat_plugin_search_bar">
-        <form action="https://integreat.app/<?php echo esc_html(strtolower(get_option('integreat_plugin_options')['city'])) ?>/de/search" method="get"> <!-- Sprachauswahl backend -->
-            <input class="integreat_plugin_search" id="integreat_plugin_search" value="<?php if (strlen($options['term']) > 2) { echo esc_attr($options['term']); } else {echo esc_attr('Integrationskurse');} ?>" name="query" placeholder="<?php if (strlen($options['term']) > 2) { echo esc_attr($options['term']); } else {echo esc_attr('Integrationskurse');} ?>">
-            <input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( 'Search' ); ?>">
-        </form>
-    </div>
-</div>
-*/
 
 function integreat_render_design_small($options) {
     ob_start();
@@ -80,31 +82,11 @@ function integreat_render_design_small($options) {
         </div>
     </div>
     <?php
-    echo 'Small Design - Test';
-    $data = ob_get_contents();
+    $html = ob_get_contents();
     ob_end_clean();
-    return $data;
+    return $html;
 }
 
-function integreat_render_design_search_widget($options) {
-    $string = 'Search Widget';
-    /*
-    $string = '<div id="integreat_plugin_search_widget" class="integreat_plugin_search_widget">';
-    $string .= '<a target="_blank" href="https://www.integreat.app/<?php echo esc_html(strtolower(get_option("integreat_plugin_options")["city"])) ?>">';
-    $string .= '<img class="mb-md" src="https://integreat.app/app-logo.png">';
-    $string .= '</a>';
-    $string .= '<label class="mb-sm"><b><?php echo esc_html($options["notification"]) ?></b></label>';
-    $string .= '<div class="integreat_plugin_search_bar">';
-    $string .= '<form action="https://integreat.app/<?php echo esc_html(strtolower(get_option("integreat_plugin_options")["city"])) ?>/de/search" method="get">'; // Sprachauswahl backend
-    $string .= '<input class="integreat_plugin_search" id="integreat_plugin_search" name="query" value="<?php if (strlen($options["term"]) > 2) { echo esc_attr($options["term"]); } else {echo esc_attr("Integrationskurse");} ?>" placeholder="<?php echo esc_attr($options["term"]) ?>">';
-    $string .= '<input class="integreat_plugin_submit" id="integreat_plugin_submit" type="submit" formtarget="_blank" value="<?php esc_attr_e( "Search" ); ?>">';
-    $string .= '</form>';
-    $string .= '</div>';
-    $string .= '</div>'; */
-    return $string;
-}
-
-/*
 function integreat_render_design_search_widget($options) {
     ob_start();
     ?>
@@ -121,9 +103,8 @@ function integreat_render_design_search_widget($options) {
         </div>
     </div>
     <?php
-    return ob_get_clean();
-}*/
-//TODO: return echoen
-//TODO: cleanes HTML mit z.B. <img />
-//TODO: wird mit ob_start() ein p Tag gerendert 
-?>  
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
+}
+?>
